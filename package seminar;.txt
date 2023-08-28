@@ -1,0 +1,53 @@
+package seminar;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Seleniumscript {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\selenium webdriver\\chromedriver\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.acharya.ac.in");
+		System.out.println(driver.getTitle());
+		driver.close();
+		
+
+	}
+
+}
+
+
+package seminar1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Demo {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "C:\\selenium webdriver\\chromedriver\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://login.yahoo.com");
+		driver.manage().window().maximize();
+		driver.findElement(By.id("login-username")).sendKeys("9966512923");
+		Thread.sleep(2000);
+		driver.findElement(By.className("button-container")).click();
+		Thread.sleep(2000);
+		String at= driver.getTitle();
+		String et= "yahoo";
+		driver.close();
+		if(at.equalsIgnoreCase(et)) {
+			System.out.println("test successfull");
+		}
+			else 
+			{
+				System.out.println("test unsuccessfull");
+			}
+		
+		}
+	}
+	
+
+
